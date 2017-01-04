@@ -1,4 +1,5 @@
 import Vector2 from '../geom/Vector2'
+import Rectangle from '../geom/Rectangle'
 
 export default class GameObject {
 
@@ -65,15 +66,15 @@ export default class GameObject {
     }
     
     intersects(gameObject) {
-        return bounds.intersects(gameObject); // 트릭: GameObject와 Rectangle 모두 x, y, width, height가 있다는 것을 이용
+        return this.bounds.intersects(gameObject); // 트릭: GameObject와 Rectangle 모두 x, y, width, height가 있다는 것을 이용
     }
 
     intersection(gameObject) {
-        return bounds.intersection(gameObject); // 트릭
+        return this.bounds.intersection(gameObject); // 트릭
     }
 
     contains(vec2) {
-        return bounds.contains(vec2);
+        return this.bounds.contains(vec2);
     }
 
     get bounds() {
