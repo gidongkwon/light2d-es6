@@ -1,5 +1,6 @@
 export { default as Game } from './core/Game'
 export { default as Keyboard } from './input/Keyboard'
+export { default as Mouse } from './input/Mouse'
 export { default as Vector2 } from './geom/Vector2'
 export { default as Rectangle } from './geom/Rectangle'
 export { default as Container } from './gameobjects/Container'

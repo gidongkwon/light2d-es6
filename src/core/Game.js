@@ -2,6 +2,7 @@ import Asset from './Asset'
 import SceneManager from './SceneManager'
 import Camera from './Camera'
 import Keyboard from '../input/Keyboard'
+import Mouse from '../input/Mouse'
 
 export default class Game {
 
@@ -18,8 +19,8 @@ export default class Game {
         this.asset = new Asset(this);
         this.scenes = new SceneManager(this);
         this.keyboard = new Keyboard(this);
+        this.mouse = new Mouse(this);
         //this.camera = new Camera();
-        //this.mouse = new Mouse();
         //this.physics = new Physics();
 
         this.dt = 0;
