@@ -28,7 +28,7 @@
 - [x] Rectangle
 
 ### input
-- [ ] Keyboard
+- [x] Keyboard
 - [ ] Mouse
 
 ### physics

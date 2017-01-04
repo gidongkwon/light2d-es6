@@ -17,8 +17,8 @@ export default class Game {
 
         this.asset = new Asset(this);
         this.scenes = new SceneManager(this);
+        this.keyboard = new Keyboard(this);
         //this.camera = new Camera();
-        //this.keyboard = new Keyboard();
         //this.mouse = new Mouse();
         //this.physics = new Physics();
 
@@ -76,11 +76,10 @@ export default class Game {
     
     update (dt) {
 
-        // this.keyboard.update(dt);
         // this.mouse.update(dt);
         // this.physics.update(dt);
 
-        if (!this.scenes.current && this.scenes.current.preloaded)
+        if (this.scenes.current && this.scenes.current.preloaded)
             this.scenes.current.update(dt);
 
     }
