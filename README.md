@@ -20,7 +20,7 @@
 - [x] GameObject
 - [x] Scene
 - [x] Sprite
-- [ ] SpriteSheet
+- [ ] Animation
 - [ ] Text
 
 ### geom
@@ -29,7 +29,7 @@
 
 ### input
 - [x] Keyboard
-- [ ] Mouse
+- [x] Mouse
 
 ### physics
 - [ ] Body
