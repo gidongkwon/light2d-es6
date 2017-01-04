@@ -2,7 +2,7 @@ import Container from './Container'
 
 export default class Scene extends Container{
 
-    constructor () {
+    constructor() {
         super();
         
         this.ui = new Container();
@@ -10,13 +10,11 @@ export default class Scene extends Container{
         this.preloaded = false;
     }
 
-
-    preload () {
+    preload() {
 
     }
 
-
-    update (dt) {
+    update(dt) {
         super.update(dt);
     }
 

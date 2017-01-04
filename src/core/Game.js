@@ -5,7 +5,7 @@ import Keyboard from '../input/Keyboard'
 
 export default class Game {
 
-    constructor (canvasId, width = 800, height = 600, backgroundColor = '#fff') {
+    constructor(canvasId, width = 800, height = 600, backgroundColor = '#fff') {
 
         this.canvasId = canvasId;
         this.width = width;
@@ -30,8 +30,7 @@ export default class Game {
 
     }
 
-
-    init () {
+    init() {
 
         document.removeEventListener('DOMContentLoaded', this.init, true);
 
@@ -55,8 +54,7 @@ export default class Game {
 
     }
 
-
-    run () {
+    run() {
         
         this.dt = (Date.now() - this._time) / 1000;
 
@@ -72,11 +70,9 @@ export default class Game {
         this._rafId = window.requestAnimationFrame(this.run.bind(this));
 
     }
-
     
-    update (dt) {
+    update(dt) {
 
-        // this.mouse.update(dt);
         // this.physics.update(dt);
 
         if (this.scenes.current && this.scenes.current.preloaded)
@@ -84,8 +80,7 @@ export default class Game {
 
     }
 
-
-    render (context) {
+    render(context) {
 
         let targetX = this.width / 2;
         let targetY = this.height / 2;
@@ -113,8 +108,7 @@ export default class Game {
 
     }
 
-
-    get fps () {
+    get fps() {
         return this._fps;
     }
 

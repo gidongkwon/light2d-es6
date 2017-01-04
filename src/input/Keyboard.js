@@ -1,7 +1,7 @@
 
 export default class Keyboard {
 
-    constructor (game) {
+    constructor(game) {
     
         this.game = game;
         this.keyPressed = [];
@@ -11,9 +11,8 @@ export default class Keyboard {
         window.addEventListener('keyup', this.keyUpHandler.bind(this));
 
     }
-
     
-    keyDownHandler (event) {
+    keyDownHandler(event) {
 
         if (this.keyCapturing.includes(event.keyCode))
             event.preventDefault();
@@ -22,13 +21,11 @@ export default class Keyboard {
 
     }
 
-
-    keyUpHandler (event) {
+    keyUpHandler(event) {
         this.keyPressed[event.keyCode] = false;
     }
 
-
-    pressed (keyCode) {
+    pressed(keyCode) {
         console.log(`${keyCode} : ${this.keyPressed[keyCode]}`);
         return this.keyPressed[keyCode];
     }

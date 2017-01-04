@@ -2,7 +2,7 @@ import Vector2 from '../geom/Vector2'
 
 export default class GameObject {
 
-    constructor () {
+    constructor() {
 
         this.position = new Vector2();
         this.rotation = 0;
@@ -19,8 +19,7 @@ export default class GameObject {
 
     }
 
-
-    beforeRender (context) {
+    beforeRender(context) {
 
         // 전역 transform을 무시할 경우 - UI등에 사용
         if (this.ignoreGlobalMatrix) {
@@ -50,101 +49,82 @@ export default class GameObject {
 
     }
 
-
-    render (context) {
+    render(context) {
         // 하위클래스에서 구현
     }
 
-
-    afterRender (context) {
+    afterRender(context) {
         context.restore();
 
         if (this.ignoreGlobalMatrix)
             context.setTransform(this._currentGlobalTransform);
     }
 
-
-    update (dt) {
+    update(dt) {
         // 하위클래스에서 구현
     }
-
     
-    intersects (gameObject) {
+    intersects(gameObject) {
         return bounds.intersects(gameObject); // 트릭: GameObject와 Rectangle 모두 x, y, width, height가 있다는 것을 이용
     }
 
-
-    intersection (gameObject) {
+    intersection(gameObject) {
         return bounds.intersection(gameObject); // 트릭
     }
 
-
-    contains (vec2) {
+    contains(vec2) {
         return bounds.contains(vec2);
     }
 
-
-    get bounds () {
+    get bounds() {
         return new Rectangle(this.x, this.y, this.width, this.height);
     }
 
-
-    get x () {
+    get x() {
         return this.position.x;
     }
 
-
-    set x (value) {
+    set x(value) {
         this.position.x = value;
     }
 
-
-    get y () {
+    get y() {
         return this.position.y;
     }
 
-
-    set y (value) {
+    set y(value) {
         this.position.y = value;
     }
 
-
-    get width () {
+    get width() {
         return this._width;
     }
 
-
-    set width (value) {
+    set width(value) {
         this._width = value;
     }
 
-
-    get height () {
+    get height() {
         return this._height;
     }
 
-
-    set height (value) {
+    set height(value) {
         this._height = value;
     }
 
-
-    get scaleX () {
+    get scaleX() {
         return this._scale.x;
     }
 
-
-    set scaleX (value) {
+    set scaleX(value) {
         this._scale.x = value;
     }
 
-
-    get scaleY () {
+    get scaleY() {
         return this._scale.y;
     }
 
-
-    set scaleY (value) {
+    set scaleY(value) {
         this._scale.y = value;
     }
 

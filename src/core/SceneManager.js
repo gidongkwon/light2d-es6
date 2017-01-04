@@ -1,14 +1,13 @@
 export default class SceneManager {
 
-    constructor (game) {
+    constructor(game) {
 
         this.game = game;
         this._currentScene = null;
 
     }
 
-
-    change (scene) {
+    change(scene) {
 
         this._currentScene = scene;
         this._currentScene.preload();
@@ -28,8 +27,7 @@ export default class SceneManager {
 
     }
 
-
-    get current () {
+    get current() {
         return this._currentScene;
     }
 

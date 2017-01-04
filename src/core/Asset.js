@@ -1,6 +1,6 @@
 export default class Asset {
 
-    constructor (game) {
+    constructor(game) {
 
         this.game = game;
         
@@ -12,8 +12,7 @@ export default class Asset {
 
     }
 
-    
-    loadImage (id, url) {
+    loadImage(id, url) {
 
         if (this.image.hasOwnProperty(id))
             return this;
@@ -23,8 +22,7 @@ export default class Asset {
 
     }
 
-    
-    loadAudio (id, url) {
+    loadAudio(id, url) {
 
         if (this.audio.hasOwnProperty(id))
             return this;
@@ -34,14 +32,12 @@ export default class Asset {
 
     }
 
-    
     // private
-    startLoad () {
+    startLoad() {
 
         for (let file of this.toLoad.values()) {
 
             switch (file.type) {
-
             case 'image':
                 let img = new Image();
                 img.src = file.url;
@@ -62,22 +58,18 @@ export default class Asset {
 
     }
 
-
-    get totalFiles () {
+    get totalFiles() {
         return this.toLoad.size;
     }
-
     
-    get progressAsPercent () {
-
+    get progressAsPercent() {
         return (this.loadingFiles === 0) ? 0 : this.loadedFiles / this.totalFiles * 100;
-
     }
 
 }
 
 
-const loadHanlder = function (event) {
+const loadHanlder = function(event) {
 
     event.target.removeEventListener('load', loadHanlder);
     
@@ -97,7 +89,7 @@ const loadHanlder = function (event) {
 
 class File {
 
-    constructor (type, id, url) {
+    constructor(type, id, url) {
 
         this.type = type;
         this.id = id;
