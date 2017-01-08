@@ -23,15 +23,27 @@ export default class Vector2 {
         return this;
     }
 
-    multiply(vec2) {
+    multiplyVector(vec2) {
         this.x *= vec2.x;
         this.y *= vec2.y;
         return this;
     }
 
-    divide(vec2) {
+    multiplyScalar(scalar) {
+        this.x *= scalar;
+        this.y *= scalar;
+        return this;
+    }
+
+    divideVector(vec2) {
         this.x /= vec2.x;
         this.y /= vec2.y;
+        return this;
+    }
+
+    divideScalar(scalar) {
+        this.x /= scalar;
+        this.y /= scalar;
         return this;
     }
 
