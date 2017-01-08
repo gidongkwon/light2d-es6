@@ -20,7 +20,7 @@
 - [x] GameObject
 - [x] Scene
 - [x] Sprite
-- [ ] Animation
+- [x] Animation
 - [ ] Text
 
 ### geom
