@@ -1,4 +1,5 @@
 export { default as Game } from './core/Game'
+export { default as Camera } from './core/Camera'
 export { default as Keyboard } from './input/Keyboard'
 export { default as Mouse } from './input/Mouse'
 export { default as Vector2 } from './geom/Vector2'

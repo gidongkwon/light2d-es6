@@ -18,9 +18,9 @@ export default class Game {
 
         this.asset = new Asset(this);
         this.scenes = new SceneManager(this);
-        this.keyboard = new Keyboard(this);
-        this.mouse = new Mouse(this);
-        //this.camera = new Camera();
+        this.keyboard = null;
+        this.mouse = null;
+        this.camera = null;
         //this.physics = new Physics();
 
         this.dt = 0;
@@ -36,6 +36,10 @@ export default class Game {
         document.removeEventListener('DOMContentLoaded', this.init, true);
 
         this.canvas = document.getElementById(this.canvasId);
+
+        this.keyboard = new Keyboard(this);
+        this.mouse = new Mouse(this);
+        this.camera = new Camera(this);
 
         if (!this.canvas) {
             throw new Error(`${this.canvasId}를 찾을 수 없습니다.`);
@@ -74,6 +78,7 @@ export default class Game {
     
     update(dt) {
 
+        this.camera.update(dt);
         // this.physics.update(dt);
 
         if (this.scenes.current && this.scenes.current.preloaded)
@@ -83,19 +88,19 @@ export default class Game {
 
     render(context) {
 
-        let targetX = this.width / 2;
-        let targetY = this.height / 2;
+        let targetX = this.camera.width / 2;
+        let targetY = this.camera.height / 2;
 
         context.save();
 
         context.fillStyle = this.backgroundColor;
         context.fillRect(0, 0, this.canvas.width, this.canvas.height);
         
-        // context.translate(targetX, targetY);
-        // context.scale(this.camera.scale.x, this.camera.scale.y);
-        // context.translate(-targetX, -targetY);
+        context.translate(targetX, targetY);
+        context.scale(this.camera.scaleX, this.camera.scaleY);
+        context.translate(-targetX, -targetY);
 
-        // context.translate(-this.camera.x, -this.camera.y);
+        context.translate(-this.camera.x, -this.camera.y);
         
         if (this.scenes.current.preloaded) {
             for (let child of this.scenes.current.children) {
