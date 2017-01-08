@@ -11,7 +11,7 @@
 
 ### core
 - [x] Asset
-- [ ] Camera
+- [x] Camera
 - [x] Game
 - [x] SceneManager
 
@@ -21,7 +21,7 @@
 - [x] Scene
 - [x] Sprite
 - [x] Animation
-- [ ] Text
+- [x] Text
 
 ### geom
 - [x] Vector2
