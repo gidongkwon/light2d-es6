@@ -5,6 +5,12 @@ export default class Vector2 {
         this.y = y;
     }
 
+    set(x, y) {
+        this.x = x;
+        this.y = y;
+        return this;
+    }
+
     add(vec2) {
         this.x = vec2.x;
         this.y = vec2.y;
