@@ -35,4 +35,4 @@ class GameScene extends light2d.Scene {
 }
 
 let game = new light2d.Game('gameCanvas', 800, 500);
-game.scenes.change(new GameScene(game));
+game.scenes.change(new GameScene());
